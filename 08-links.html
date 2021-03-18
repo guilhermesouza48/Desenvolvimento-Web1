@@ -4,6 +4,7 @@
     <meta charset="pt-br">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links (hyper links ou hiperligações)</title>
+    <link rel="stylesheet" href="08.css">
 </head>
 <body>
     <!---
@@ -37,6 +38,59 @@
     
     -->
 
-    <a href="https://site.fatecfranca.edu.br">Site oficial da Fatec Franca</a>
-</body>
+    
+    <div>
+        <a href="https://site.fatecfranca.edu.br">Site Oficial da Fatec Franca</a>
+    </div>
+
+    <p>
+        Para maiores informações sobre o uso da imagem em HTML, consulte:<a href="07-Imagens2.html">Imagens 2</a>. Está tudo explicado lá!
+    </p>
+
+    <div>
+        <a href="https://www.cps.sp.gov.br" target="_blank">Site do Centro Paula Souza</a>
+    </div>
+
+    <div>
+        <a href="07-Imagens2.html" title="Página principal do site do APPTIVA">
+            <img src="img/apptiva-icon.png" alt= "Site do AppTiva"
+        </a>
+
+    </div>
+
+    <div>
+        <a href="03-listas.html">Lista HTML</a>
+    </div>
+
+
+    <!--
+        ATRIBUTO REL= estabelece a relação entre a pagina atual e a pagina linkada ATRIBUTO SEMANTICO
+        NOFOLLOW= O ator da agina não concorda necessariamente com o conteudo de destino
+        PREV= Link para a pagina anterior do mesmo site
+        NEXT=pagina seguinte do mesmo site
+        EXTERNAL= link site externo
+        AUTHOR=link site pessoal do autor da pagina
+    -->
+    <div>
+        <a href="https://produto.mercadolivre.com.br/MLB-1459346254-livro-html-e-css-projete-e-construa-websites-alta-books-_JM#position=3&type=item&tracking_id=89c6f044-2670-4d23-9dc8-2e402dad1c91" rel="nofollow">livro de html</a>
+
+
+    <br>
+        <a href="07-Imagens2.html" rel="prev">Pagina anterior</a>
+
+    <br>   
+    
+    <a href="09-Não-existe.html"rel="next">Pagina seguinte</a>
+
+    <br>
+
+    <a href="http://www.pudim.com.br" rel="external" do pudim</a>
+
+    <br>
+
+    <a href="https://www.facebook.com/guilhermesouza.jesus.9" rel="author" target="_blank">Fale com o Autor</a>
+
+    </br>
+
+ </body>
 </html>
