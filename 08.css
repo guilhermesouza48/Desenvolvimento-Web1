@@ -5,8 +5,7 @@ a {
 }
 /*link visitados*/
 a:visited {
-    color: green;
-    filter: brightness(15%); /*cor 80% mais escura*/
+    color: greenyellow;
 }
 /*mouse sobre*/
 a:hover  {
