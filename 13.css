@@ -1,0 +1,59 @@
+/*
+   1)Unidades absolutas
+   px(pixel):corresponde a um ponto de iluminação  da tela, ou ,quando isso não poder determinado (no papel, por exemplo), equivalente a 1/96 de uma polegada (1 polegada == 2,54 cm) . Seu tamanho , portanto depende da resolução da tela:
+   -pt (point): medida usada para o tamanho de fontes.Equivalentes a 1/72 de uma polegada
+   -cm (centimentro): para impressao
+   -mm (milimetros): para impressao
+   -in (inches,polegadas): para impressao
+
+   2) Unidades relativas
+        - em: usada para fontes. Significa 100% do tamanho da fonte do elemento pai
+        -rem: usada para fontes. Significa 100% do tamanho fonte configurado para o elemento <html> (elemento raiz)
+        -%: sempre em relação ao tamanho do pai
+        -vw : 1% da largura do viewport ( area  de visualizaçao do navegador)
+        -vh : 1% da altura do viweport
+*/        
+
+* { /*todos elementos*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html { /*elemento raiz*/
+    font-size: 20px;
+}
+div {
+    padding: 20px;
+    border: 2px solid black;
+    margin: 10px;
+    text-align: center;
+    
+}
+#container {
+    background-color: goldenrod;
+    font-size: 16pt;
+    height: 600px;
+    width: 70vw; /* 70% da largura da janela*/
+}
+#box1 {
+    background-color: hotpink;
+    font-size: 30pt;
+    height: 20%; /* 20% da altura do pai*/
+}
+#box2 {
+    background-color: cadetblue;
+     /* Tamanho da fonte do pai: 16pt. 1.5em = 1.5 * 16pt = 24pt */
+    font-size: 1.5em; /*equivalente 150%*/
+    width: 50%; /*metade da largura do pai*/
+    height: 12vh; /* 12% da altura da janela (e nao do pai!)
+}
+#box3 {
+    background-color: crimson;
+    font-size: 150% /*equivalente a 1.5em*/
+}
+#box3-1{
+    font-size:0.5em;/*metade do tamnho da fonte do pai*/
+}
+#box4 {
+    background-color: chartreuse;
+    font-size: 3rem; /*3 *  30px do tamanho de fonte do elemento raiz = 60x*/
+    width: 40vw; /* 40% da largura da janela (e nao do pai!)*/
+}
