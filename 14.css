@@ -1,0 +1,33 @@
+/* CSS Reset */
+/*@import ,quando existem , devem ser o primeiro item de um arquivo CCS*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,800;1,400;1,800&display=swap');
+
+*{
+    /*Todos os Elementos*/
+    padding: 0;
+    margin: 0;
+    /*Exemplo de familia de fonte SEM serifa
+    font-family: sans,Calibri,Arial;*/
+  
+    /*Exemplo de familia de fonte COM serifa
+    font-family: : Georgia,'Times New Roman', serif;*/
+
+    /*Exemplo de familia de fonte MONOESPAÇADA
+    font-family: Consolas, 'Courier New', monospace;*/  
+    font-family: Raleway, Calibri, Arial, sans;
+
+}
+
+header{
+    background-color: #550000;
+    padding: 10px 20px;
+}
+nav ul li{
+    display: inline-block;
+    margin: 10px;
+}
+
+nav {
+    background-color: #FF7F2A; /*cor fundo*/
+    color: #FFFFFF;/*cor texto*/
+}
