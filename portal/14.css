@@ -1,156 +1,286 @@
-/* CSS Reset */
-/*@import ,quando existem , devem ser o primeiro item de um arquivo CCS*/
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,800;1,400;1,800&display=swap');
-/*definicao de variaveis*/
-:root{
+/* @import, quando existem, devem ser o primeiro item de um arquivo CSS */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Definição de variáveis */
+:root {
     --cor-primaria: #550000;
     --cor-secundaria: #FF7F2A;
     --cor-secundaria-clara: #FFAF7B;
     --cor-fundo-clara: #DDDDDD;
     --cor-fundo-escura: #BBBBBB;
+    --cor-texto-claro: #FFFFFF;
     --cor-texto-escura: #777777;
-    --cor-texto-clara: #FFFFFF;
 }
-*{
-    /*Todos os Elementos*/
+
+/* CSS reset */
+* { /* Todos os elementos */
     padding: 0;
     margin: 0;
-    /*Exemplo de familia de fonte SEM serifa
-    font-family: sans,Calibri,Arial;*/
-  
-    /*Exemplo de familia de fonte COM serifa
-    font-family: : Georgia,'Times New Roman', serif;*/
+    /* Exemplo de família de fonte SEM serifa
+    font-family: Calibri, Arial, sans; */
 
-    /*Exemplo de familia de fonte MONOESPAÇADA
-    font-family: Consolas, 'Courier New', monospace;*/  
+    /* Exemplo de família de fonte COM serifa
+    font-family: Georgia, 'Times New Roman', serif; */
+
+    /* Exemplo de família de fonte MONOESPAÇADA 
+    font-family: Consolas, 'Courier New', monospace; */
+
+    /* Família de fontes da web (webfonts) */
     font-family: Raleway, Calibri, Arial, sans;
     font-size: 16px;
-
+    box-sizing: border-box;/* faz com que bordas e margens sejam considerados no tamanho total do elemnto*/
+    
 }
-html{ /*tamanho da fonte padrão do documento*/
+html {                  /* Tamanho de fonte padrão do documento */
     font-size: 16px;
 }
-/*cor de todos os links de site */
+
+/* Configuração de todos os links do site */
 a {
-    color:var(--cor-primaria);
-    text-decoration: none; /*sem sublinhado*/
+    color: var(--cor-primaria);
+    text-decoration: none;  /* Sem sublinhado */
 }
-a:hover{ /*mouse passando em cima do link*/
+
+a:hover {   /* Mouse passando em cima do link */
     color: var(--cor-secundaria);
-    text-decoration: underline;/*volta sublinhado*/
+    text-decoration: underline; /* Volta o sublinhado */
 }
-header{
+
+header {
     background-color: var(--cor-primaria);
     padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
 }
-nav ul li{
-    display: inline-block; /*deixa menu horizontal*/
+#social{
+    background-color: transparent;
+    display: flex;
+    align-content: baseline;
+}
+#social a span{
+    margin-left: 6px;
+    display: none;
+}
+#social img{
+    width: 32px;
+}
+#social a{
+    color: #FFFFFF;
+    text-decoration: none;
+    display: flex;
+    align-items: center
+}
+#social a:hover span{
+    display: inline;
+}
+
+nav ul li {
+    display: inline-block;  /* Deixa o menu na horizontal */
     margin: 10px;
 }
 
 nav {
-    background-color: var(--cor-secundaria); /*cor fundo*/
-    color: var(--cor-fundo-clara);/*cor texto*/
+    background-color: var(--cor-secundaria);  /* Cor do fundo */
+    color: var(--cor-texto-claro);             /* Cor do texto */
 }
-#content{
-    background-color: var(--cor-fundo-escura);
+#menu{
+    padding: 0 20px;
+}
+#menu li{
+    margin: 10px 0;
+}
+#menu a{
+    height: 100%;
+    padding: 10px 20px;
+    color: #FFFFFF;
+    transition: 500ms;
+    background-color: var(--cor-secundaria);
+}
+#menu a:hover{
+    filter: brightness(0.8);
+    text-decoration: none;
+}
+
+#content {
+    background-color: var(--cor-fundo-clara);
     padding: 20px;
-    display: flex; /*os elementos e seus filhos usarao flexbox*/
-    flex-direction: row; /*filhos estarão em linha*/
+    /* Este elemento e seus filhos usarão flexbox */
+    display: flex;
+    flex-direction: row; /* Os filhos ficarão em linha, na horizontal */
 }
-main, aside{
-    background-color:var(--cor-fundo-clara);
+
+main, aside {
+    background-color: var(--cor-texto-claro);
     padding: 24px;
     margin-bottom: 20px;
-    /*Bordas arredondas*/
-    border-radius: 14px;
-    /*Sombra(drop-down shadow*/
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.25);
-    flex-grow: 1;
+    /* Bordas arrendondadas */
+    border-radius: 10px;
+    /* Sombra (drop-down shadow) */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+    flex-grow: 1;   /* 1 unidade de largura (padrão) */
+    max-width: 100%;
+    
 }
-main{
-    width:75% ;/*tres unidades de largura*/
+
+main {
+    width: 75%;
 }
-aside{
+
+aside {
     margin-left: 20px;
     background-color: var(--cor-fundo-escura);
     width: 25%;
 }
-main article, aside article{ /*article que está dentro de uma section*/
-    margin: 24px 0; /*24 px no top/bottom , 0 left/right*/
+
+main article, aside article {   /* article que estão de dentro de main ou aside */
+    margin: 24px 0;     /* 24px top/bottom, 0 left/right */
 }
-main > h1, aside > h1{ /*Apenas os H1 que sao filhos diretos de section*/
-    text-transform:uppercase ;/*deixar o texto em maiusculas*/
+
+main > h1, aside > h1 {          /* Apenas os h1 que são filhos diretos de main ou aside */
+    /* Deixar o texto em maiúsculas */
+    text-transform: uppercase;
     color: var(--cor-secundaria);
 }
-article > h1 { /*Só os H1 q são filhos diretos de article*/
-    font-size: 1.5rem; /*1.5x tamanho da fonte do elemento raiz (html)*/
+
+article > h1 {    /* Só os h1 que são filhos diretos de article */
     margin-bottom: 6px;
 }
+
 article > h1 > a {
-    font-size: 1.5rem; /*1.5x tamanho da fonte do elemento raiz (html)*/
+    font-size: 1.5rem;      /* 1.5x o tamanho da fonte do elemento raiz (html) */
 }
+
 article > p {
     color: var(--cor-texto-escura);
 }
+
 article > h2 {
     font-size: 0.8rem;
-    text-transform: uppercase; /*Todas as letras em maiusculas*/
+    text-transform: uppercase; /* Todas as letras em maiúsculas */
 }
+
 .destaque {
     background-color: var(--cor-secundaria-clara);
     padding: 24px;
-    border-radius: 4px; /* Bordas LEVEMENTE arredondadas*/
+    border-radius: 4px;  /* Bordas LEVEMENTE arredondadas */
 }
-.destaque > p {
-    color: #000;
+
+.destaque p {
+    color: #000000;
     font-size: 1.5rem;
 }
+
 .destaque > h1 > a {
     font-size: 2.5rem;
 }
+
 .destaque > h2 {
     font-size: 1rem;
 }
-.destaque > img {
+
+.destaque img {
     width: 450px;
-   
-}
-.foto-texto {
-    display: flex;
-    flex-direction: row;
-}
-img {
-    width: 300px;
-    height: 400;
     margin-right: 24px;
     border-radius: 4px;
+    max-width: 100%;/*largura max limitada a largura do pai*/
 }
+
+.foto-texto {
+    display: flex;
+    flex-direction: row; /* Os filhos ficarão em linha, na horizontal */
+}
+
 aside > article > img {
-    display: block;/*margin auto à esuqerda e à direita centraliza o elemento quando este é display: block*/
+    display: block;
+    /* margin auto à esquerda e à direita centraliza o elemento quando este é
+       display: block */
     margin: 0 auto; 
     border-radius: 4px;/*borda arredondada*/
+    max-width: 100%;/*Largura maxima é 100% da largura do pai*/
 }
+
 aside > article > h1 > a {
-    font-size: 0.8rem;
-    color:#000;
+    font-size: 1rem;
+    color: #000000;
 }
-aside > article > h1{
+aside > article > h1 {
     margin-top: 6px;
 }
 footer{
     background-color: var(--cor-primaria);
     padding: 24px;
-    color: #FFFFFF;
+    color: var(--cor-texto-claro);    
     display: flex;
     flex-direction: row;
-    align-content: space-around;/*espaço automaticamente entre os itens de um flexbox*/
+    justify-content: space-around;
 }
 footer a{
-    color: #FFFFFF;
+    color: var(--cor-texto-claro);
 }
 footer ul li{
-    display: inline-block; /* coloca os itens de uma lista na horizontal*/
-    border-right: 1px solid #fff;
-    padding: 0 6px;   
+    display: inline-block;
+    margin: 0 6px;
+    padding: 0 12px;
+    border-right: 2px solid white;
+}
+footer img {
+    width: 200px;
+    height: 100%;
+}
+footer ul li:last-child{
+    border-right: none;
+}
+/*Regras para larguras especificas de tela */
+@media screen and (max-width: 1020px) { /* Breakpoint (ponto de quebra)*/
+    main {
+       width: 60%;
+    }
+    aside {
+        width: 40%;
+    }
+    .foto-texto {
+        flex-direction: column; /* Os filhos ficarão em linha, na vertical */
+    }
+    .destaque img {
+        margin-bottom: 24px;
+        margin-right: 0px;
+    }
+    
+}
+@media screen and (max-width: 880px ){
+    /*Colocar o menu em um botão*/
+    /*Fazer:*/
+
+
+    #content {
+        flex-direction: column; /* Os filhos ficarão em linha, na vertical */
+    }
+    main {
+        width: 100%;
+    }
+    aside {
+        width: 100%;
+        margin-left: 0;
+    }
+    aside > article > h1 {
+        text-align: center ;
+    }
+    .destaque img {
+        /*centralizar a imagem*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    footer > * {  /*todos filhos DIRETOS de footer*/
+        flex-direction: column;
+    }
+    footer ul li:first-child {  /* Só o primeiro (first child)*/
+        padding-left: 0;
+    }
+    footer address {
+        text-align: right;
+    }
+}
+@media screen and (max-width: 640px){
+    /*Colocar o logo principal e os icones de redes sociais em coluna*/
+    
 }
